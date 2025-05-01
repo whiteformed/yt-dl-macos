@@ -1,0 +1,26 @@
+{
+    "name": "yt-dl-macos",
+    "version": "1.0.0",
+    "main": "public/electron.js",
+    "scripts": {
+        "start": "cross-env NODE_ENV=development concurrently \"npm run react-start\" \"npm run electron-start\"",
+        "react-start": "cd app && npm start",
+        "electron-start": "wait-on http://localhost:3000 && electron .",
+        "build": "cd app && npm run build && electron-builder"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "concurrently": "^9.1.2",
+        "electron": "^35.0.3",
+        "electron-builder": "^25.1.8",
+        "electron-store": "^10.0.1",
+        "wait-on": "^8.0.3"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "electron-reload": "^2.0.0-alpha.1"
+    }
+}
